@@ -1,0 +1,213 @@
+<div class="col-4">
+    <!-- Informações Climáticas -->
+    <% if (success === true) { %>
+    <div class="row weather-info">
+        <div class="col-4 text-right">
+            <!-- Quente -->
+            <% if (genre === 'party') { %>
+            <img src="../svg/sun.svg" class="genre" alt="Dia Quente">
+            <% } %>
+            <!-- Fresco -->
+            <% if (genre === 'pop') { %>
+            <img src="../svg/cloud.svg" class="genre" alt="Dia Fresco">
+            <% } %>
+            <!-- Frio -->
+            <% if (genre  === 'rock') { %>
+            <img src="../svg/rain.svg" class="genre" alt="Dia Frio">
+            <% } %>
+            <!-- Gélido -->
+            <% if (genre === 'classical') { %>
+            <img src="../svg/snow.svg" class="genre" alt="Dia Gélido">
+            <% } %>
+        </div>
+        <div class="col-8 text-white">
+            <p class="climate"><%= city %> - <%= country %></p>
+            <p class="climate"><%= weather %>° <%= unit %></p>
+        </div>
+    </div>
+    <% } %>
+    <% if (success !== true) { %>
+    <div class="row weather-height"></div>
+    <% } %>
+    <!-- Menu de Pesquisas -->
+    <div class="card border-success">
+        <h5 class="card-header bg-success text-white">Opções de Pesquisa</h5>
+        <div class="card-body bg-light">
+            <form action="/search" method="get" id="form" autocomplete="off">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <div class="custom-control custom-radio">
+                                <input class="custom-control-input custom-b" type="radio" name="mode" id="location"
+                                    value="location" required checked>
+                                <label class="custom-control-label" for="location">Cidade, Estado e País</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="custom-control custom-radio float-right">
+                                <input class="custom-control-input custom-b" type="radio" name="mode" id="coordinates"
+                                    value="coordinates" required>
+                                <label class="custom-control-label" for="coordinates">Latitude e
+                                    Longitude</label>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col">
+                                <div class="custom-control custom-radio">
+                                    <input class="custom-control-input custom-b" type="radio" name="unit" id="celsius"
+                                        value="celsius" required checked>
+                                    <label class="custom-control-label" for="celsius">Celsius</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="custom-control custom-radio text-center">
+                                    <input class="custom-control-input custom-b" type="radio" name="unit" id="kelvin"
+                                        value="kelvin" required>
+                                    <label class="custom-control-label" for="kelvin">Kelvin</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="custom-control custom-radio float-right">
+                                    <input class="custom-control-input custom-b" type="radio" name="unit" id="farenheit"
+                                        value="farenheit" required>
+                                    <label class="custom-control-label" for="farenheit">Farenheit</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col">
+                                <div class="custom-control custom-radio">
+                                    <input class="custom-control-input custom-b" type="radio" name="playlists" id="12"
+                                        value="12" required checked>
+                                    <label class="custom-control-label" for="12">12 Listas</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="custom-control custom-radio text-center">
+                                    <input class="custom-control-input custom-b" type="radio" name="playlists" id="24"
+                                        value="24" required>
+                                    <label class="custom-control-label" for="24">24 Listas</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="custom-control custom-radio text-center">
+                                    <input class="custom-control-input custom-b" type="radio" name="playlists" id="36"
+                                        value="36" required>
+                                    <label class="custom-control-label" for="36">36 Listas</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="custom-control custom-radio float-right">
+                                    <input class="custom-control-input custom-b" type="radio" name="playlists" id="48"
+                                        value="48" required>
+                                    <label class="custom-control-label" for="48">48 Listas</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div id="by-location" class="show">
+                        <div class="form-group">
+                            <div class="mb-3">
+                                <label for="city">Cidade</label>
+                                <div class="input-group" id="city-div">
+                                    <div class="input-group-prepend">
+                                        <img src="../svg/city.svg" id="ico" alt="Cidade" class="input-group-text ico">
+                                    </div>
+                                    <input type="text" name="city" id="city" class="form-control" aria-describedby="ico"
+                                        placeholder="Nome da Cidade" maxlength="30" required
+                                        oninvalid="this.setCustomValidity(' ')" oninput="this.setCustomValidity('')">
+                                </div>
+                                <div class=" invalid-feedback">
+                                    O nome da Cidade é necessário.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="mb-3">
+                                <label for="state">Estado</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <img src="../svg/state.svg" id="ico-s" alt="Estado"
+                                            class="input-group-text ico">
+                                    </div>
+                                    <input type="text" name="state" id="state" class="form-control"
+                                        aria-describedby="ico-s" placeholder="Nome do Estado (Opcional)">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="mb-3">
+                                <label for="country">País</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <img src="../svg/country.svg" id="ico-c" alt="País"
+                                            class="input-group-text ico">
+                                    </div>
+                                    <input type="text" name="country" id="country" class="form-control"
+                                        aria-describedby="ico-c" placeholder="Nome do País (Opcional)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="by-coordinates" class="hide">
+                        <div class="form-group">
+                            <div class="mb-3">
+                                <label for="lat">Latitude</label>
+                                <div class="input-group" id="lat-div">
+                                    <div class="input-group-prepend">
+                                        <img src="../svg/world.svg" id="ico-la" alt="Latitude"
+                                            class="input-group-text ico">
+                                    </div>
+                                    <input type="text" name="lat" id="lat" class="form-control"
+                                        aria-describedby="ico-la" placeholder="Digite a Latitude" maxlength="30"
+                                        required disabled oninvalid="this.setCustomValidity(' ')"
+                                        oninput="this.setCustomValidity('')">
+                                </div>
+                                <div class="invalid-feedback">
+                                    Digite uma Latitude válida.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="mb-3">
+                                <label for="lon">Longitude</label>
+                                <div class="input-group" id="lon-div">
+                                    <div class="input-group-prepend">
+                                        <img src="../svg/fliped_world.svg" id="ico-lo" alt="Longitude"
+                                            class="input-group-text ico flip">
+                                    </div>
+                                    <input type="text" name="lon" id="lon" class="form-control"
+                                        aria-describedby="ico-lo" placeholder="Digite a Longitude" maxlength="30"
+                                        required disabled oninvalid="this.setCustomValidity(' ')"
+                                        oninput="this.setCustomValidity('')">
+                                </div>
+                                <div class=" invalid-feedback">
+                                    Digite uma Longitude válida.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button type="submit" id="submit" class="btn btn-success btn-margin">
+                                Pesquisar
+                            </button>
+                        </div>
+                        <div class="col">
+                            <button type="button" id="set-coord" class="btn btn-danger btn-margin hide float-right">
+                                Coordenadas Atuais
+                            </button>
+                        </div>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
