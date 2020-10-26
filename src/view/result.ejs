@@ -55,7 +55,11 @@
     <!-- Localização não encontrada-->
     <% if (success === false) {%>
     <script>
-        window.onload = alert('Localização não encontrada! \nTente novamente.');
+        window.onload = function callTimeout() {
+            setTimeout(function runTimeout() {
+                alert('Localização não encontrada!');
+            }, 500);
+        };
     </script>
     <% }%>
 </div>

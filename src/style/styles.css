@@ -151,7 +151,3 @@ body {
 .climate:last-child {
     margin-bottom: 0;
 }
-
-.thermo {
-    width: fit-content;
-}

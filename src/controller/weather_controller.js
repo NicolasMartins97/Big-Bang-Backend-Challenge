@@ -107,6 +107,9 @@ exports.city_weather = async function apiCall(req, res) {
             unit = 'C';
         }
       }
+      else {
+        success = false;
+      }
     }
   }
 
