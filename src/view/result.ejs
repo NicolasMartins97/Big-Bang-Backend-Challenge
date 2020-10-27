@@ -2,64 +2,67 @@
 
 <!-- Menu de Músicas -->
 <div class="col-7">
-    <% if (success === true ) { %>
-    <div class="row padding">
-        <div class="col-3 text-right">
-            <!-- Party -->
-            <% if (genre === 'party') { %>
-            <img src="../svg/party.svg" class="genre" alt="Hot Party">
-            <% } %>
-            <!-- Pop -->
-            <% if (genre === 'pop') { %>
-            <img src="../svg/pop.svg" class="genre" alt="Warm Pop">
-            <% } %>
-            <!-- Rock-->
-            <% if (genre === 'rock') { %>
-            <img src="../svg/rock.svg" class="genre" alt="Cool Rock">
-            <% } %>
-            <!-- Clássica -->
-            <% if (genre === 'classical') { %>
-            <img src="../svg/classic.svg" class="genre" alt="Winter Classic">
-            <% } %>
-        </div>
-        <div class="col-9">
-            <!-- Party -->
-            <% if (genre === 'party') { %>
-            <p class="party">Hot Party</p>
-            <% } %>
-            <!-- Pop -->
-            <% if (genre === 'pop') { %>
-            <p class="pop">Warm Pop</p>
-            <% } %>
-            <!-- Clássica -->
-            <% if (genre === 'rock') { %>
-            <p class="rock">Cool Rock</p>
-            <% } %>
-            <!-- Clássica -->
-            <% if (genre === 'classical') { %>
-            <p class="classical">Winter Classical</p>
-            <% } %>
-        </div>
+  <% if (success === true ) { %>
+  <div class="row padding">
+    <div class="col-3 text-right">
+      <!-- Party -->
+      <% if (genre === 'party') { %>
+      <img src="../svg/party.svg" class="genre" alt="Hot Party" />
+      <% } %>
+      <!-- Pop -->
+      <% if (genre === 'pop') { %>
+      <img src="../svg/pop.svg" class="genre" alt="Warm Pop" />
+      <% } %>
+      <!-- Rock-->
+      <% if (genre === 'rock') { %>
+      <img src="../svg/rock.svg" class="genre" alt="Cool Rock" />
+      <% } %>
+      <!-- Clássica -->
+      <% if (genre === 'classical') { %>
+      <img src="../svg/classic.svg" class="genre" alt="Winter Classic" />
+      <% } %>
     </div>
-    <div class="row scrollable bg-light border-success">
-        <% for (let i = 0 ; i < urls.length; i+=1) { %>
-        <div class="card card-size border-success">
-            <a class="none" href="<%= urls[i] %>" target="_blank">
-                <img class="card-img-top img-round" src="<%= imgs[i] %>"
-                    title="<%= descs[i] %> &#10&#10🎵 Clique para acessar a playlist no Spotify.">
-            </a>
-        </div>
-        <% } %>
+    <div class="col-9">
+      <!-- Party -->
+      <% if (genre === 'party') { %>
+      <p class="party">Hot Party</p>
+      <% } %>
+      <!-- Pop -->
+      <% if (genre === 'pop') { %>
+      <p class="pop">Warm Pop</p>
+      <% } %>
+      <!-- Clássica -->
+      <% if (genre === 'rock') { %>
+      <p class="rock">Cool Rock</p>
+      <% } %>
+      <!-- Clássica -->
+      <% if (genre === 'classical') { %>
+      <p class="classical">Winter Classical</p>
+      <% } %>
+    </div>
+  </div>
+  <div class="row scrollable bg-light border-success">
+    <% for (let i = 0 ; i < urls.length; i+=1) { %>
+    <div class="card card-size border-success">
+      <a class="none" href="<%= urls[i] %>" target="_blank">
+        <img
+          class="card-img-top img-round"
+          src="<%= imgs[i] %>"
+          title="<%= descs[i] %> &#10&#10🎵 Clique para acessar a playlist no Spotify."
+        />
+      </a>
     </div>
     <% } %>
-    <!-- Localização não encontrada-->
-    <% if (success === false) {%>
-    <script>
-        window.onload = function callTimeout() {
-            setTimeout(function runTimeout() {
-                alert('Localização não encontrada!');
-            }, 500);
-        };
-    </script>
-    <% }%>
+  </div>
+  <% } %>
+  <!-- Localização não encontrada-->
+  <% if (success === false) {%>
+  <script>
+    window.onload = function callTimeout() {
+      setTimeout(function runTimeout() {
+        alert('Localização não encontrada!');
+      }, 500);
+    };
+  </script>
+  <% }%>
 </div>

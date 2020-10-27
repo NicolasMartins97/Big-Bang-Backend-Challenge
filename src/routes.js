@@ -1,7 +1,6 @@
 // Vars
 const { Router } = require('express');
 const location = require('./controller/weather_controller');
-const list = require('./controller/music_controller');
 const routes = Router();
 
 // Métodos

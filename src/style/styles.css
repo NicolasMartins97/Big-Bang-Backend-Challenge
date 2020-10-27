@@ -1,21 +1,21 @@
 body {
-    background: url(../img/bg.png);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+  background: url(../img/bg.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .ico {
-    width: 3rem;
-    height: auto;
-    background-color: #ebebeb !important;
+  width: 3rem;
+  height: auto;
+  background-color: #ebebeb !important;
 }
 
 .ico-la.is-invalid,
 .ico-lo.is-invalid,
 .ico.is-invalid {
-    border-color: #dc3545 !important;
+  border-color: #dc3545 !important;
 }
 
 .ico-lo.is-valid,
@@ -23,131 +23,131 @@ body {
 .ico-s.is-valid,
 .ico-c.is-valid,
 .ico.is-valid {
-    border-color: #28a745 !important;
+  border-color: #28a745 !important;
 }
 
 .btn-margin {
-    margin-top: 0.25rem;
+  margin-top: 0.25rem;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
 .show {
-    display: block;
+  display: block;
 }
 
 .card-size {
-    width: 16rem;
-    margin: 1.25rem;
+  width: 16rem;
+  margin: 1.25rem;
 }
 
 .img-round {
-    border-radius: calc(0.25rem - 0.0625rem) !important;
+  border-radius: calc(0.25rem - 0.0625rem) !important;
 }
 
 .none {
-    text-decoration: none
+  text-decoration: none;
 }
 
 .genre {
-    width: 7rem;
+  width: 7rem;
 }
 
 .form-group:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .scrollable {
-    height: 37rem;
-    width: 100%;
-    overflow-y: auto;
-    border: 0.0625rem solid rgba(0, 0, 0, 0.125);
-    border-radius: 0.25rem;
+  height: 37rem;
+  width: 100%;
+  overflow-y: auto;
+  border: 0.0625rem solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
 }
 
 .padding {
-    margin-top: 1rem;
-    margin-bottom: 0.35rem;
+  margin-top: 1rem;
+  margin-bottom: 0.35rem;
 }
 
-.custom-control-input:checked~.custom-control-label::before {
-    color: #fff;
-    border-color: #28a745;
-    background-color: #28a745;
+.custom-control-input:checked ~ .custom-control-label::before {
+  color: #fff;
+  border-color: #28a745;
+  background-color: #28a745;
 }
 
-.custom-b.is-valid:checked~.custom-control-label::before {
-    border-color: #34ce57;
-    background-color: #28a745;
+.custom-b.is-valid:checked ~ .custom-control-label::before {
+  border-color: #34ce57;
+  background-color: #28a745;
 }
 
-.custom-b.is-valid~.custom-control-label {
-    color: #212529;
+.custom-b.is-valid ~ .custom-control-label {
+  color: #212529;
 }
 
 .scrollable::-webkit-scrollbar {
-    width: 0.625rem;
+  width: 0.625rem;
 }
 
 .scrollable::-webkit-scrollbar-track {
-    background: #ebebeb;
+  background: #ebebeb;
 }
 
 .scrollable::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.15);
 }
 
 .scrollable::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0, 0, 0.225);
+  background: rgba(0, 0, 0, 0.225);
 }
 
 .party,
 .pop,
 .rock,
 .classical {
-    font-size: 4.5rem;
-    margin-left: 1rem;
-    color: #fff;
+  font-size: 4.5rem;
+  margin-left: 1rem;
+  color: #fff;
 }
 
 .party {
-    font-family: 'Monoton', cursive;
+  font-family: 'Monoton', cursive;
 }
 
 .pop {
-    font-family: 'Audiowide', cursive;
+  font-family: 'Audiowide', cursive;
 }
 
 .rock {
-    font-family: 'Graduate', cursive;
+  font-family: 'Graduate', cursive;
 }
 
 .classical {
-    font-family: 'Alex Brush', cursive;
-    font-weight: 500;
+  font-family: 'Alex Brush', cursive;
+  font-weight: 500;
 }
 
 .weather-info {
-    margin-top: 1rem;
-    margin-bottom: 1.1rem;
+  margin-top: 1rem;
+  margin-bottom: 1.1rem;
 }
 
 .weather-height {
-    height: 9.1rem;
+  height: 9.1rem;
 }
 
 .climate {
-    font-family: 'Cairo', cursive;
-    font-size: 1.5rem;
-    margin-left: 1rem;
+  font-family: 'Cairo', cursive;
+  font-size: 1.5rem;
+  margin-left: 1rem;
 }
 
 .climate:first-child {
-    margin-top: 0.75rem;
+  margin-top: 0.75rem;
 }
 
 .climate:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
